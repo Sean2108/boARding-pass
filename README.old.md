@@ -1,1 +1,0 @@
-# sia-app-challenge
