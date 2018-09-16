@@ -8,27 +8,29 @@ public class CallApi : MonoBehaviour {
 	[System.Serializable]
 	public class Weather
 	{
-		public Condition[] weather;
-		public WeatherMain main;
+		public WeatherInfo[] weatherForecast;
 	}
 
 	[System.Serializable]
-	public class Condition
+	public class WeatherInfo
 	{
-		public int id;
-		public string main;
-		public string description;
-		public string icon;
+		public string phrase;
+		public string lowTemperatureValue;
+		public string highTemperatureValue;
+		public string probabilityOfPrecip;
 	}
 
 	[System.Serializable]
-	public class WeatherMain
+	public class WaitTime
 	{
-		public int temp;
-		public int pressure;
-		public int humidity;
-		public int temp_min;
-		public int temp_max;
+		public WaitTimeQueue[] current;
+	}
+
+	[System.Serializable]
+	public class WaitTimeQueue
+	{
+		public string queueName;
+		public string projectedWaitTime;
 	}
 
 	private TextMesh text;
@@ -36,14 +38,15 @@ public class CallApi : MonoBehaviour {
 	{
 		text = GetComponent<TextMesh>();
 		text.text = "";
-		StartCoroutine(GetWeatherApi());
-		StartCoroutine(GetCurrencyApi());
+		StartCoroutine(GetWeatherApi("SIN"));
+		StartCoroutine(GetCurrencyApi("SGD", "USD"));
+		StartCoroutine(GetWaitTimeApi("SIN"));
 	}
 
-	IEnumerator GetWeatherApi() {
-		string city = "Singapore";
-		using (UnityWebRequest www = UnityWebRequest.Get(string.Format("https://api.openweathermap.org/data/2.5/weather?q={0}&APPID=27ce1401a006f7e0a8c4fc37fd78c13e&units=metric", city)))
+	IEnumerator GetWeatherApi(string city) {
+		using (UnityWebRequest www = UnityWebRequest.Get(string.Format("https://weather.api.aero/weather/v1/forecast/{0}?duration=5&temperatureScale=C", city)))
 		{
+			www.SetRequestHeader("X-apiKey", "89e15931434731aefdaa04920ec60e44");
 			yield return www.SendWebRequest();
 
 			if (www.isNetworkError || www.isHttpError)
@@ -53,15 +56,34 @@ public class CallApi : MonoBehaviour {
 			else
 			{
 				Weather w = JsonUtility.FromJson<Weather>(www.downloadHandler.text.ToString());
-				text.text += string.Format("Temperature: {0}°C\nWeather: {1}\n", w.main.temp.ToString(), w.weather[0].description);
+				text.text += string.Format("Temperature: {0}-{1}°C\nWeather: {2}\n", w.weatherForecast[0].lowTemperatureValue, w.weatherForecast[0].highTemperatureValue, w.weatherForecast[0].phrase);
 			}
 		}
 	}
 
-	IEnumerator GetCurrencyApi()
+	IEnumerator GetWaitTimeApi(string city) {
+		using (UnityWebRequest www = UnityWebRequest.Get(string.Format("https://waittime-qa.api.aero/waittime/v1/current/{0}", city)))
+		{
+			www.SetRequestHeader("X-apiKey", "8e2cff00ff9c6b3f448294736de5908a");
+			yield return www.SendWebRequest();
+
+			if (www.isNetworkError || www.isHttpError)
+			{
+				text.text = www.error.ToString();
+			}
+			else
+			{
+				WaitTime w = JsonUtility.FromJson<WaitTime>(www.downloadHandler.text.ToString());
+				foreach (WaitTimeQueue queue in w.current) 
+				{
+					text.text += string.Format("Queue: {0} -  {1} minutes\n", queue.queueName, Int32.Parse(queue.projectedWaitTime) / 60);
+				}
+			}
+		}
+	}
+
+	IEnumerator GetCurrencyApi(string from, string to)
 	{
-		string from = "SGD";
-		string to = "USD";
 		using (UnityWebRequest www = UnityWebRequest.Get(string.Format("https://free.currencyconverterapi.com/api/v6/convert?q={0}_{1}&compact=ultra", from, to)))
 		{
 			yield return www.SendWebRequest();
