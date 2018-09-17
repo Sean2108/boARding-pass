@@ -41,8 +41,8 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 587
-  m_MinSize: {x: 709, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 711, y: 492}
+  m_MaxSize: {x: 18006, y: 14042}
   vertical: 1
   controlID: 109
 --- !u!114 &3
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 434, y: 271}
   m_MaxSize: {x: 14004, y: 10021}
   vertical: 0
-  controlID: 54
+  controlID: 88
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,8 +165,8 @@ MonoBehaviour:
     y: 0
     width: 1280
     height: 587
-  m_MinSize: {x: 709, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 711, y: 492}
+  m_MaxSize: {x: 18006, y: 14042}
   vertical: 0
   controlID: 110
 --- !u!114 &8
@@ -516,14 +516,14 @@ MonoBehaviour:
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\user\Documents\sia-app
+  m_LastProjectPath: C:\Users\user\sia-app-challenge\sia-app-challenge
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b6280000
     m_LastClickedID: 10422
-    m_ExpandedIDs: 00000000882b0000942b0000782c0000aa2c0000582d0000d82d00008c2e0000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -548,10 +548,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 236}
+    scrollPos: {x: 0, y: 156}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000882b0000942b0000782c0000aa2c0000582d0000d82d00008c2e0000
+    m_ExpandedIDs: ffffffff00000000b6390000b83a0000683c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -635,7 +635,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 92c4ffff0ec5ffff88c5ffffdac7ffff8accffff06cdffff80cdffffd2cffffffcd3ffff78d4fffff2d4ffff44d7ffff3edbffffbadbffff34dcffff86deffff72e2ffffeee2ffff68e3ffffbce5ffffbcf4ffff38f5ffffb2f5ffff02f8ffffd6fbffff00000000782f0000
+    m_ExpandedIDs: 9826feff1627feff9027feffe029feff6a35feffe835feff6236feffb638feff284bfeffa64bfeff204cfeff704efeffc0c1feff3ed5feffb8d5feff2ed6feff7ed8feffe0f6feff5af7feffd0f7feff20fafeffea02ffff6403ffffda03ffff2e06ffffe8e7ffff000000007c3c0000743e00005a3f0000404000005a4000003441000038420000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
