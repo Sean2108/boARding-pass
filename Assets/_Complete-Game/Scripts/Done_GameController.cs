@@ -59,7 +59,7 @@ public class Done_GameController : MonoBehaviour
 
             if (gameOver)
             {
-                restartText.text = "Press screen for Restart";
+                restartText.text = "Tap Screen for Restart";
                 restart = true;
                 break;
             }

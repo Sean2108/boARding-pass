@@ -29,9 +29,10 @@ public class Done_PlayerController : MonoBehaviour
 		}
 	}
 
-	void FixedUpdate ()
+	public void Move (float moveHorizontal)
 	{
-		float moveHorizontal = Input.acceleration.x;
+		//float moveHorizontal = Input.GetAxis ("Horizontal");
+		//float moveVertical = Input.GetAxis ("Vertical");
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, 0.0f);
 		GetComponent<Rigidbody>().velocity = movement * speed;
