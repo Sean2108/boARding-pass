@@ -13,10 +13,10 @@ public class BoardingPassTiltCheck : MonoBehaviour {
 		if (transform != null)
 		{
 			Vector3 targetDir = target.position - transform.position;
-			float angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
-			//float rotate = transform.rotation.y + 90.0f;
+			float angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.forward);
+			//float angle = transform.rotation.y + 90.0f;
 			text.text = angle.ToString();
-			playerController.Move(angle / 100);//(transform.rotation.y + 90) / 15);
+			playerController.Move(-angle / 25);//(transform.rotation.y + 90) / 15);
 		}
 	}
 }
