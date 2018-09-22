@@ -309,6 +309,7 @@
     <Compile Include="Assets\_Complete-Game\Scripts\Done_RandomRotator.cs" />
     <Compile Include="Assets\_Complete-Game\Scripts\Done_WeaponController.cs" />
     <Compile Include="Assets\BoardingPassTiltCheck.cs" />
+    <Compile Include="Assets\BoardingPassTrackableEvent.cs" />
     <Compile Include="Assets\CallApi.cs" />
     <Compile Include="Assets\Lobby\Scripts\DraggablePanel.cs" />
     <Compile Include="Assets\Lobby\Scripts\EventSystemChecker.cs" />
@@ -338,6 +339,7 @@
     <None Include="Assets\Lobby\Instruction.txt" />
     <None Include="Assets\StreamingAssets\Vuforia\full_pass.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\target_images.xml" />
+    <None Include="Assets\StreamingAssets\Vuforia\tilted_pass.xml" />
     <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
     <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />
     <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />

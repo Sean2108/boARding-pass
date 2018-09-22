@@ -377,6 +377,7 @@
     <None Include="Assets\Lobby\Instruction.txt" />
     <None Include="Assets\StreamingAssets\Vuforia\full_pass.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\target_images.xml" />
+    <None Include="Assets\StreamingAssets\Vuforia\tilted_pass.xml" />
     <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
     <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />
     <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
