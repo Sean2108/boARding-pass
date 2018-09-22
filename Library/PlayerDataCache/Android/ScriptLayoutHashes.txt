@@ -326,3 +326,4 @@ ba1dc7221ef32196712350a64d363c8f Assembly-CSharp.dll:.Done_RandomRotator
 93307bd34e39d73fd24e00ec39c25a91 Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 ba00c26d46eb27902b95b03117b85877 Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
 d44fd4af6ff94b4df075aaf39b146950 Assembly-CSharp.dll:.Done_GameController
+1a803454ef251bd3ebed0cbb907356e0 Assembly-CSharp.dll:.BoardingPassTrackableEvent
