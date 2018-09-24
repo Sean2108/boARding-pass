@@ -11,6 +11,7 @@ public class Done_GameController : MonoBehaviour
     public float spawnWait;
     public float startWait;
     public float waveWait;
+    public float scoreIncrementWait;
 
     public Text scoreText;
     public Text restartText;
@@ -29,6 +30,7 @@ public class Done_GameController : MonoBehaviour
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
+        StartCoroutine(AddScoreEverySecond());
     }
 
     void Update()
@@ -64,6 +66,15 @@ public class Done_GameController : MonoBehaviour
                 break;
             }
         }
+    }
+
+    IEnumerator AddScoreEverySecond()
+    {
+        while (!gameOver) {
+            yield return new WaitForSeconds(scoreIncrementWait);
+            AddScore(1);
+        }
+
     }
 
     public void AddScore(int newScoreValue)
