@@ -86,6 +86,7 @@
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerEntry.cs" />
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerList.cs" />
     <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyTopPanel.cs" />
+    <Compile Include="Assets\RotateAboutY.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\NetworkAsteroid.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\NetworkGameManager.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\NetworkLobbyHook.cs" />
