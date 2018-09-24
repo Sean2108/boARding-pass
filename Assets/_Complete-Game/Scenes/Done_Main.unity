@@ -113,64 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &49347555
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.553071e-18
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_RootOrder
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 6.27
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5.61
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 2f96ee8ac2f65904fac1337fadeb7130, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e07aa9800f184164484b91306193dc54, type: 3}
-  m_IsPrefabAsset: 0
 --- !u!1001 &124871254
 Prefab:
   m_ObjectHideFlags: 0
@@ -758,7 +700,7 @@ Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ImageTargetMesh1088614
+  m_Name: ImageTargetMesh273194
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -1295,7 +1237,7 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: 'tiltedMaterial
 
-    1088624'
+    273204'
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -2006,7 +1948,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hazards:
   - {fileID: 1956411190908678, guid: 662ff47cc25a9a04db355717df71eaf3, type: 2}
-  - {fileID: 1529913975899146, guid: 36a6a2a86b0e8a34a82fe6894d74b45f, type: 2}
+  - {fileID: 1356334497183490, guid: e40bcb63bf4bdcd4f9b0d138aeac01d1, type: 2}
   spawnValues: {x: 6, y: 0, z: 50}
   hazardCount: 10
   spawnWait: 0.75
@@ -2038,7 +1980,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7b04c59dd84f14039b601e1abbe7b884, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 87eef560d315c5e4ba877a371544f06d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
