@@ -28,6 +28,15 @@ public class Done_DestroyByContact : MonoBehaviour
 			return;
 		}
 
+		if (tag == "Coin" && other.tag == "Player")
+		{
+			gameController.AddScore(10);
+			Instantiate(explosion, transform.position, transform.rotation);
+			Handheld.Vibrate();
+			Destroy (gameObject);
+			return;
+		}
+
 		if (explosion != null)
 		{
 			Instantiate(explosion, transform.position, transform.rotation);
@@ -38,6 +47,7 @@ public class Done_DestroyByContact : MonoBehaviour
 			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
 			gameController.GameOver();
 		}
+
 		
 		gameController.AddScore(scoreValue);
 		Destroy (other.gameObject);
