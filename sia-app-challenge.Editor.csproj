@@ -367,12 +367,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
     <Compile Include="Assets\Vuforia\Editor\Scripts\OpenSourceInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Editor\Vuforia\Emulator\VuforiaEmulator.xml" />
+    <None Include="Assets\Fonts\OpenSans\License!.txt" />
+    <None Include="Assets\Lobby\Documentation.txt" />
+    <None Include="Assets\Lobby\Instruction.txt" />
     <None Include="Assets\StreamingAssets\Vuforia\full_pass.xml" />
     <None Include="Assets\StreamingAssets\Vuforia\target_images.xml" />
+    <None Include="Assets\StreamingAssets\Vuforia\tilted_pass.xml" />
     <None Include="Assets\Vuforia\Shaders\BrightTexture.shader" />
     <None Include="Assets\Vuforia\Shaders\CameraDiffuse.shader" />
     <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
