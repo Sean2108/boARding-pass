@@ -19,6 +19,7 @@ public class Done_GameController : MonoBehaviour
 
     private bool gameOver;
     private bool restart;
+    private bool notStarted;
     private int score;
 
     void Start()
@@ -28,13 +29,32 @@ public class Done_GameController : MonoBehaviour
         restartText.text = "";
         gameOverText.text = "";
         score = 0;
+        StartCoroutine(Countdown(3));
+        //UpdateScore();
+        //StartCoroutine(SpawnWaves());
+        //StartCoroutine(AddScoreEverySecond());
+    }
+
+    IEnumerator Countdown(int seconds)
+    {
+        int count = seconds;
+
+        while (count > 0)
+        {
+
+            gameOverText.text = count.ToString();
+            yield return new WaitForSeconds(1);
+            count--;
+        }
+        gameOverText.text = " ";
+        // count down is finished...
         UpdateScore();
         StartCoroutine(SpawnWaves());
         StartCoroutine(AddScoreEverySecond());
     }
-
     void Update()
     {
+
         if (restart)
         {
             if (Input.GetButton("Fire1"))
@@ -42,6 +62,7 @@ public class Done_GameController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
+
     }
 
     IEnumerator SpawnWaves()
@@ -70,7 +91,8 @@ public class Done_GameController : MonoBehaviour
 
     IEnumerator AddScoreEverySecond()
     {
-        while (!gameOver) {
+        while (!gameOver)
+        {
             yield return new WaitForSeconds(scoreIncrementWait);
             AddScore(1);
         }
