@@ -30,9 +30,9 @@ public class Done_GameController : MonoBehaviour
         gameOverText.text = "";
         score = 0;
         StartCoroutine(Countdown(3));
-        //UpdateScore();
-        //StartCoroutine(SpawnWaves());
-        //StartCoroutine(AddScoreEverySecond());
+        // UpdateScore();
+        // StartCoroutine(SpawnWaves());
+        // StartCoroutine(AddScoreEverySecond());
     }
 
     IEnumerator Countdown(int seconds)

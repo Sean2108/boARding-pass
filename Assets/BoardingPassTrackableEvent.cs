@@ -27,7 +27,7 @@ public class BoardingPassTrackableEvent : DefaultTrackableEventHandler {
 			Vector3 targetDir = transform.position - target.position;
 			//float angle = Vector3.SignedAngle(targetDir, target.forward, Vector3.forward);
 			//float angle = transform.rotation.y + 90.0f;
-			text.text = targetDir.x.ToString();
+			text.text = transform.eulerAngles.ToString();//targetDir.x.ToString();
 			playerController.Move(targetDir.x / 25);//(transform.rotation.y + 90) / 15);
 		}
 		else {

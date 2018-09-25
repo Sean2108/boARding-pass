@@ -12,6 +12,7 @@ public class Done_PlayerController : MonoBehaviour
 	public float speed;
 	public float tilt;
 	public Done_Boundary boundary;
+	public GameObject arCamera;
 
 	public void Move (float moveHorizontal)
 	{
@@ -20,13 +21,13 @@ public class Done_PlayerController : MonoBehaviour
 
 		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, 0.0f);
 		GetComponent<Rigidbody>().velocity = movement * speed;
-		
 		GetComponent<Rigidbody>().position = new Vector3
 		(
-			Mathf.Clamp (GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax), 
+			Mathf.Clamp (GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax),
 			0.0f, 
 			0.0f
 		);
+		arCamera.transform.position = new Vector3(Mathf.Clamp (GetComponent<Rigidbody>().position.x, boundary.xMin, boundary.xMax), 3.0f, -10.0f);
 		//GetComponent<Rigidbody>().velocity.x * -tilt
 		GetComponent<Rigidbody>().rotation = Quaternion.Euler (0.0f, 0.0f, GetComponent<Rigidbody>().velocity.x * -tilt);
 	}
