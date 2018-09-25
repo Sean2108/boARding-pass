@@ -16,10 +16,16 @@ public class Done_GameController : MonoBehaviour
     public Text scoreText;
     public Text restartText;
     public Text gameOverText;
+    public GameObject instructionText;
+    public GameObject welcomeText;
+    public GameObject playAgainText;
+    public GameObject instructionArrows;
+
+    public GameObject leaderboard;
 
     private bool gameOver;
     private bool restart;
-    private bool notStarted;
+    public bool waitingForPass;
     private int score;
 
     void Start()
@@ -28,11 +34,18 @@ public class Done_GameController : MonoBehaviour
         restart = false;
         restartText.text = "";
         gameOverText.text = "";
+        scoreText.text = "";
         score = 0;
+        waitingForPass = true;
+    }
+
+    public void StartCountdown()
+    {  
+        waitingForPass = false;
+        Destroy(welcomeText);
+        instructionText.SetActive(true);
+        instructionArrows.SetActive(true);
         StartCoroutine(Countdown(3));
-        // UpdateScore();
-        // StartCoroutine(SpawnWaves());
-        // StartCoroutine(AddScoreEverySecond());
     }
 
     IEnumerator Countdown(int seconds)
@@ -41,7 +54,6 @@ public class Done_GameController : MonoBehaviour
 
         while (count > 0)
         {
-
             gameOverText.text = count.ToString();
             yield return new WaitForSeconds(1);
             count--;
@@ -49,12 +61,13 @@ public class Done_GameController : MonoBehaviour
         gameOverText.text = " ";
         // count down is finished...
         UpdateScore();
+        Destroy(instructionText);
+        Destroy(instructionArrows);
         StartCoroutine(SpawnWaves());
         StartCoroutine(AddScoreEverySecond());
     }
     void Update()
     {
-
         if (restart)
         {
             if (Input.GetButton("Fire1"))
@@ -83,6 +96,7 @@ public class Done_GameController : MonoBehaviour
             if (gameOver)
             {
                 restartText.text = "Tap Screen for Restart";
+                playAgainText.SetActive(true);
                 restart = true;
                 break;
             }
@@ -113,6 +127,7 @@ public class Done_GameController : MonoBehaviour
     public void GameOver()
     {
         gameOverText.text = "Game Over!";
+        leaderboard.SetActive(true);
         gameOver = true;
     }
 }
