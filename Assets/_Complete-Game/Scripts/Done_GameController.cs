@@ -14,12 +14,13 @@ public class Done_GameController : MonoBehaviour
     public float scoreIncrementWait;
 
     public Text scoreText;
-    public Text restartText;
     public Text gameOverText;
+
     public GameObject instructionText;
     public GameObject welcomeText;
     public GameObject playAgainText;
     public GameObject instructionArrows;
+    public GameObject boardingWarning;
 
     public GameObject leaderboard;
 
@@ -32,7 +33,6 @@ public class Done_GameController : MonoBehaviour
     {
         gameOver = false;
         restart = false;
-        restartText.text = "";
         gameOverText.text = "";
         scoreText.text = "";
         score = 0;
@@ -64,8 +64,18 @@ public class Done_GameController : MonoBehaviour
         Destroy(instructionText);
         Destroy(instructionArrows);
         StartCoroutine(SpawnWaves());
+        StartCoroutine(ShowWarning());
         StartCoroutine(AddScoreEverySecond());
     }
+
+    IEnumerator ShowWarning()
+    {
+        yield return new WaitForSeconds(60);
+        boardingWarning.SetActive(true);
+        yield return new WaitForSeconds(5);
+        Destroy(boardingWarning);
+    }
+
     void Update()
     {
         if (restart)
@@ -95,7 +105,6 @@ public class Done_GameController : MonoBehaviour
 
             if (gameOver)
             {
-                restartText.text = "Tap Screen for Restart";
                 playAgainText.SetActive(true);
                 restart = true;
                 break;
