@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{F1EAC5D3-952C-F268-2AE7-A7FC9AC9BC4B}|">
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/_Complete-Game/Scripts/HealthScript.cs">
+    <Files>
+      <File FileName="Assets/BoardingPassTiltCheck.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Complete-Game/Scripts/Done_Mover.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Complete-Game/Scripts/Done_GameController.cs" Line="32" Column="20" />
+      <File FileName="Assets/BoardingPassTrackableEvent.cs" Line="1" Column="1" />
+      <File FileName="Assets/_Complete-Game/Scripts/HealthScript.cs" Line="4" Column="23" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
