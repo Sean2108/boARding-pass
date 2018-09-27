@@ -1621,9 +1621,10 @@ GameObject:
   - component: {fileID: 1174051590}
   - component: {fileID: 1174051589}
   - component: {fileID: 1174051594}
+  - component: {fileID: 1174051595}
   m_Layer: 0
   m_Name: ARCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1723,6 +1724,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20c26aceea49ea44ea81d68a25779ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1174051595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1174051588}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bc17351fc38a45ca9bfb8e99cdcda5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Color: {r: 1, g: 1, b: 1, a: 1}
+  Size: 1
+  HorizontalSpeed: 0.2
+  VerticalSpeed: 0
+  Density: 0.7
+  Shader: {fileID: 4800000, guid: fdac6dc07af404deba03f0e8f95edf1f, type: 3}
 --- !u!1 &1222743902
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,6 +2677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 243482550}
   currentHealth: 750
+  displayedHealth: 750
   interpolationPeriod: 0.0001
 --- !u!114 &1904399391
 MonoBehaviour:
