@@ -7,10 +7,18 @@ public class Done_DestroyByContact : MonoBehaviour
 	public GameObject playerExplosion;
 	public int scoreValue;
 	private Done_GameController gameController;
+    private GameObject healthBarCanvas;
+    private HealthBarScriptNew newScript;
 
-	void Start ()
+    void Start ()
 	{
-		GameObject gameControllerObject = GameObject.FindGameObjectWithTag ("GameController");
+        healthBarCanvas = GameObject.FindGameObjectWithTag("Health Bar");
+        if (healthBarCanvas == null)
+        {
+            Debug.Log("Can't find health bar");
+        }
+        newScript = healthBarCanvas.GetComponent<HealthBarScriptNew>();
+        GameObject gameControllerObject = GameObject.FindGameObjectWithTag ("GameController");
 		if (gameControllerObject != null)
 		{
 			gameController = gameControllerObject.GetComponent <Done_GameController>();
@@ -30,7 +38,8 @@ public class Done_DestroyByContact : MonoBehaviour
 
 		if (tag == "Coin" && other.tag == "Player")
 		{
-			gameController.AddScore(10);
+            newScript.currentHealth = newScript.currentHealth + 20;
+            gameController.AddScore(10);
 			Instantiate(explosion, transform.position, transform.rotation);
 			Handheld.Vibrate();
 			Destroy (gameObject);
@@ -44,13 +53,14 @@ public class Done_DestroyByContact : MonoBehaviour
 
 		if (other.tag == "Player")
 		{
-			Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
-			gameController.GameOver();
+            newScript.currentHealth = newScript.currentHealth - 20;
+            Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+			//gameController.GameOver();
 		}
 
 		
 		gameController.AddScore(scoreValue);
-		Destroy (other.gameObject);
+		//Destroy (other.gameObject);
 		Destroy (gameObject);
 	}
 }
