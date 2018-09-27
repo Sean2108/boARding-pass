@@ -24,13 +24,15 @@ public class Done_GameController : MonoBehaviour
 
     public GameObject leaderboard;
 
-    public Done_Mover mover;
+    public Done_Mover cloudMover;
+    public Done_Mover batteryMover;
 
     private bool gameOver;
     private bool restart;
     public bool waitingForPass;
     private int score;
     public bool startedGame;
+    public int spawnRateInc;
 
     void Start()
     {
@@ -134,7 +136,10 @@ public class Done_GameController : MonoBehaviour
         score += newScoreValue;
         if (score % 10 == 0)
         {
-            mover.IncSpeed();
+            batteryMover.IncSpeed();
+            cloudMover.IncSpeed();
+            spawnWait /= spawnRateInc;
+            waveWait /= spawnRateInc;
         }
         UpdateScore();
     }
