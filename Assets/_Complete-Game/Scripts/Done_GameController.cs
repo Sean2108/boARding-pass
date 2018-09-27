@@ -24,6 +24,8 @@ public class Done_GameController : MonoBehaviour
 
     public GameObject leaderboard;
 
+    public Done_Mover mover;
+
     private bool gameOver;
     private bool restart;
     public bool waitingForPass;
@@ -130,6 +132,10 @@ public class Done_GameController : MonoBehaviour
     public void AddScore(int newScoreValue)
     {
         score += newScoreValue;
+        if (score % 10 == 0)
+        {
+            mover.IncSpeed();
+        }
         UpdateScore();
     }
 
