@@ -38,7 +38,7 @@ public class Done_DestroyByContact : MonoBehaviour
 
 		if (tag == "Coin" && other.tag == "Player")
 		{
-            newScript.currentHealth = Mathf.Min(newScript.currentHealth + 20, 100);
+            newScript.currentHealth = Mathf.Min(newScript.currentHealth + 20, 750);
             gameController.AddScore(10);
 			Instantiate(explosion, transform.position, transform.rotation);
 			Handheld.Vibrate();
