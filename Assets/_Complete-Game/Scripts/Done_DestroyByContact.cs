@@ -56,6 +56,7 @@ public class Done_DestroyByContact : MonoBehaviour
 		{
             newScript.currentHealth = newScript.currentHealth - fuelDeplete;
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
+			Handheld.Vibrate();
 			//gameController.GameOver();
 		}
 

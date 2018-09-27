@@ -66,13 +66,16 @@ public class Done_GameController : MonoBehaviour
         Destroy(instructionText);
         Destroy(instructionArrows);
         StartCoroutine(SpawnWaves());
-        StartCoroutine(ShowWarning());
         StartCoroutine(AddScoreEverySecond());
     }
 
-    IEnumerator ShowWarning()
+    public void ShowWarning()
     {
-        yield return new WaitForSeconds(60);
+        StartCoroutine(ShowWarningTrigger());
+    }
+
+    IEnumerator ShowWarningTrigger()
+    {
         boardingWarning.SetActive(true);
         yield return new WaitForSeconds(5);
         Destroy(boardingWarning);
