@@ -6,6 +6,8 @@ public class Done_DestroyByContact : MonoBehaviour
 	public GameObject explosion;
 	public GameObject playerExplosion;
 	public int scoreValue;
+	public int fuelRecharge;
+	public int fuelDeplete;
 	private Done_GameController gameController;
     private GameObject healthBarCanvas;
     private HealthBarScriptNew newScript;
@@ -38,8 +40,7 @@ public class Done_DestroyByContact : MonoBehaviour
 
 		if (tag == "Coin" && other.tag == "Player")
 		{
-            newScript.currentHealth = Mathf.Min(newScript.currentHealth + 20, 750);
-            gameController.AddScore(10);
+            newScript.currentHealth = Mathf.Min(newScript.currentHealth + fuelRecharge, 750);
 			Instantiate(explosion, transform.position, transform.rotation);
 			Handheld.Vibrate();
 			Destroy (gameObject);
@@ -53,7 +54,7 @@ public class Done_DestroyByContact : MonoBehaviour
 
 		if (other.tag == "Player")
 		{
-            newScript.currentHealth = newScript.currentHealth - 20;
+            newScript.currentHealth = newScript.currentHealth - fuelDeplete;
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);
 			//gameController.GameOver();
 		}
