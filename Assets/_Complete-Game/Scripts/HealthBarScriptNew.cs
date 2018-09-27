@@ -28,7 +28,7 @@ public class HealthBarScriptNew : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= interpolationPeriod && currentHealth > 0)
+        if (time >= interpolationPeriod && currentHealth > 0 && gameController.startedGame == true)
         {
             time = 0.0f;
 

@@ -28,6 +28,7 @@ public class Done_GameController : MonoBehaviour
     private bool restart;
     public bool waitingForPass;
     private int score;
+    public bool startedGame;
 
     void Start()
     {
@@ -59,6 +60,7 @@ public class Done_GameController : MonoBehaviour
             count--;
         }
         gameOverText.text = " ";
+        startedGame = true;
         // count down is finished...
         UpdateScore();
         Destroy(instructionText);
@@ -132,9 +134,20 @@ public class Done_GameController : MonoBehaviour
     {
         scoreText.text = "Score: " + score;
     }
+    void DeleteAll(string toDelete){
+        var obj = GameObject.FindGameObjectsWithTag(toDelete);
+        foreach (GameObject enemyObj in obj)
+        {
+            Debug.Log("deleting" + toDelete);
+            Destroy(enemyObj);
+        }
+    }
+   
 
     public void GameOver()
     {
+        DeleteAll("Asteroid");
+        DeleteAll("Coin");
         gameOverText.text = "Game Over!";
         leaderboard.SetActive(true);
         gameOver = true;
