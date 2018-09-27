@@ -34,10 +34,9 @@ public class HealthBarScriptNew : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time >= interpolationPeriod && currentHealth > 0 && gameController.startedGame == true)
+        if (time >= interpolationPeriod && currentHealth > 0 && gameController.startedGame)
         {
             time = 0.0f;
-
             currentHealth = currentHealth - 0.2f;
             healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
             d2FogsPE.Density =(float)(2 * (maxHealth - currentHealth) / (maxHealth));
@@ -45,6 +44,7 @@ public class HealthBarScriptNew : MonoBehaviour
         if (currentHealth <= 0){
             gameController.GameOver();
         }
+        healthBar.sizeDelta = new Vector2(currentHealth, healthBar.sizeDelta.y);
 
     }
 }
