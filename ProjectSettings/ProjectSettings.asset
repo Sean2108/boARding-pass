@@ -125,6 +125,7 @@ PlayerSettings:
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
   xboxOneEnable7thCore: 1
+  isWsaHolographicRemotingEnabled: 0
   vrSettings:
     cardboard:
       depthFormat: 0
@@ -355,6 +356,8 @@ PlayerSettings:
   m_BuildTargetVRSettings: []
   m_BuildTargetEnableVuforiaSettings:
   - m_BuildTarget: Android
+    m_Enabled: 1
+  - m_BuildTarget: Standalone
     m_Enabled: 1
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
