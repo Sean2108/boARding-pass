@@ -166,8 +166,10 @@ public class Done_GameController : MonoBehaviour
     {
         DeleteAll("Asteroid");
         DeleteAll("Coin");
-        gameOverText.text = "Game Over!";
+        gameOverText.text = "";
+        scoreText.text = "";
         leaderboard.SetActive(true);
         gameOver = true;
+
     }
 }
