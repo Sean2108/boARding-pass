@@ -3,11 +3,13 @@ using System.Collections;
 
 public class Done_Mover : MonoBehaviour
 {
-	public float speed;
+	public float initialSpeed;
+	private float speed;
 	public float speedIncrement;
 
 	void Start ()
 	{
+		speed = initialSpeed;
 		GetComponent<Rigidbody>().velocity = transform.forward * speed * Random.Range(5f, 10f);
 	}
 

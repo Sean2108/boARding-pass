@@ -8,10 +8,12 @@ public class Done_GameController : MonoBehaviour
     public GameObject[] hazards;
     public Vector3 spawnValues;
     public int hazardCount;
-    public float spawnWait;
+    public float initialSpawnWait;
     public float startWait;
-    public float waveWait;
+    public float initialWaveWait;
     public float scoreIncrementWait;
+    private float spawnWait;
+    private float waveWait;
 
     public Text scoreText;
     public Text gameOverText;
@@ -42,6 +44,8 @@ public class Done_GameController : MonoBehaviour
         scoreText.text = "";
         score = 0;
         waitingForPass = true;
+        spawnWait = initialSpawnWait;
+        waveWait = initialWaveWait;
     }
 
     public void StartCountdown()
