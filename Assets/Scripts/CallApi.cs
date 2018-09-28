@@ -100,59 +100,59 @@ public class CallApi : MonoBehaviour {
 		}
 	}
 
-	// IEnumerator GetWeatherApi(string city) {
-	// 	using (UnityWebRequest www = UnityWebRequest.Get(string.Format("https://weather.api.aero/weather/v1/forecast/{0}?duration=5&temperatureScale=C", city)))
-	// 	{
-	// 		www.SetRequestHeader("X-apiKey", "89e15931434731aefdaa04920ec60e44");
-	// 		yield return www.SendWebRequest();
+	IEnumerator GetWeatherApi(string city) {
+		using (UnityWebRequest www = UnityWebRequest.Get(string.Format("https://weather.api.aero/weather/v1/forecast/{0}?duration=5&temperatureScale=C", city)))
+		{
+			www.SetRequestHeader("X-apiKey", "89e15931434731aefdaa04920ec60e44");
+			yield return www.SendWebRequest();
 
-	// 		if (www.isNetworkError || www.isHttpError)
-	// 		{
-	// 			text.text = www.error.ToString();
-	// 		}
-	// 		else
-	// 		{
-	// 			Weather w = JsonUtility.FromJson<Weather>(www.downloadHandler.text.ToString());
-	// 			text.text += string.Format("Temperature: {0}-{1}°C\nWeather: {2}\n", w.weatherForecast[0].lowTemperatureValue, w.weatherForecast[0].highTemperatureValue, w.weatherForecast[0].phrase);
-	// 		}
-	// 	}
-	// }
+			if (www.isNetworkError || www.isHttpError)
+			{
+				// text.text = www.error.ToString();
+			}
+			else
+			{
+				Weather w = JsonUtility.FromJson<Weather>(www.downloadHandler.text.ToString());
+				string weatherString = string.Format("Temperature: {0}-{1}°C\nWeather: {2}\n", w.weatherForecast[0].lowTemperatureValue, w.weatherForecast[0].highTemperatureValue, w.weatherForecast[0].phrase);
+			}
+		}
+	}
 
-	// IEnumerator GetWaitTimeApi(string city) {
-	// 	using (UnityWebRequest www = UnityWebRequest.Get(string.Format("https://waittime-qa.api.aero/waittime/v1/current/{0}", city)))
-	// 	{
-	// 		www.SetRequestHeader("X-apiKey", "8e2cff00ff9c6b3f448294736de5908a");
-	// 		yield return www.SendWebRequest();
+	IEnumerator GetWaitTimeApi(string city) {
+		using (UnityWebRequest www = UnityWebRequest.Get(string.Format("https://waittime-qa.api.aero/waittime/v1/current/{0}", city)))
+		{
+			www.SetRequestHeader("X-apiKey", "8e2cff00ff9c6b3f448294736de5908a");
+			yield return www.SendWebRequest();
 
-	// 		if (www.isNetworkError || www.isHttpError)
-	// 		{
-	// 			text.text = www.error.ToString();
-	// 		}
-	// 		else
-	// 		{
-	// 			WaitTime w = JsonUtility.FromJson<WaitTime>(www.downloadHandler.text.ToString());
-	// 			foreach (WaitTimeQueue queue in w.current) 
-	// 			{
-	// 				text.text += string.Format("Queue: {0} -  {1} minutes\n", queue.queueName, Int32.Parse(queue.projectedWaitTime) / 60);
-	// 			}
-	// 		}
-	// 	}
-	// }
+			if (www.isNetworkError || www.isHttpError)
+			{
+				// text.text = www.error.ToString();
+			}
+			else
+			{
+				WaitTime w = JsonUtility.FromJson<WaitTime>(www.downloadHandler.text.ToString());
+				foreach (WaitTimeQueue queue in w.current) 
+				{
+					string WaitTimeString = string.Format("Queue: {0} -  {1} minutes\n", queue.queueName, Int32.Parse(queue.projectedWaitTime) / 60);
+				}
+			}
+		}
+	}
 
-	// IEnumerator GetCurrencyApi(string from, string to)
-	// {
-	// 	using (UnityWebRequest www = UnityWebRequest.Get(string.Format("https://free.currencyconverterapi.com/api/v6/convert?q={0}_{1}&compact=ultra", from, to)))
-	// 	{
-	// 		yield return www.SendWebRequest();
+	IEnumerator GetCurrencyApi(string from, string to)
+	{
+		using (UnityWebRequest www = UnityWebRequest.Get(string.Format("https://free.currencyconverterapi.com/api/v6/convert?q={0}_{1}&compact=ultra", from, to)))
+		{
+			yield return www.SendWebRequest();
 
-	// 		if (www.isNetworkError || www.isHttpError)
-	// 		{
-	// 			text.text = www.error.ToString();
-	// 		}
-	// 		else
-	// 		{
-	// 			text.text += string.Format("1 {0} - {1} {2}\n", from, float.Parse(www.downloadHandler.text.ToString().Split(':')[1].Trim('}')).ToString("n2"), to);
-	// 		}
-	// 	}
-	// }
+			if (www.isNetworkError || www.isHttpError)
+			{
+				// text.text = www.error.ToString();
+			}
+			else
+			{
+				string currencyString = string.Format("1 {0} - {1} {2}\n", from, float.Parse(www.downloadHandler.text.ToString().Split(':')[1].Trim('}')).ToString("n2"), to);
+			}
+		}
+	}
 }
