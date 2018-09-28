@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7850f24249e4056b2189de03ae584c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -5
+  initialSpeed: -5
   speedIncrement: -1
 --- !u!114 &114687069811052604
 MonoBehaviour:
@@ -140,7 +140,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1459862227383078, guid: cc461484bcafc664fb68be84c1fc6860, type: 2}
   playerExplosion: {fileID: 0}
-  scoreValue: 10
   fuelRecharge: 90
   fuelDeplete: 187
 --- !u!136 &136841599244225958

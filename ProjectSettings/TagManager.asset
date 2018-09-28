@@ -3,11 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Boundary
-  - Health Bar
-  - Coin
-  - Asteroid
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -17,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - Back
+  - 
   - 
   - 
   - 
@@ -44,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Back
-    uniqueID: 2214375663
     locked: 0
