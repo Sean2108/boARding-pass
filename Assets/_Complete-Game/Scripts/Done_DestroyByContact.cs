@@ -5,7 +5,7 @@ public class Done_DestroyByContact : MonoBehaviour
 {
 	public GameObject explosion;
 	public GameObject playerExplosion;
-	public int scoreValue;
+	//public int scoreValue;
 	public int fuelRecharge;
 	public int fuelDeplete;
 	private Done_GameController gameController;
@@ -61,7 +61,7 @@ public class Done_DestroyByContact : MonoBehaviour
 		}
 
 		
-		gameController.AddScore(scoreValue);
+		//gameController.AddScore(scoreValue);
 		//Destroy (other.gameObject);
 		Destroy (gameObject);
 	}
